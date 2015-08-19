@@ -42,10 +42,10 @@ df['Timestamp'] = times
 
 df.to_csv(fileName + '-sum.csv')
 
-df = df[ df['Timestamp'] >= 600]
-df = df[ df['Timestamp'] <= 900]
+df = df[ df.index >= 6000]
+df = df[ df.index <= 9005]
 
-df[['SUM', 'Timestamp']].to_json('P06-Actigraph-' + speed + '.json')
+df[['SUM', 'Timestamp']].to_json('P06-Actigraph-' + speed + '-sum.json')
 
 print df.dtypes
 
